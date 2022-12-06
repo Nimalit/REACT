@@ -1,0 +1,33 @@
+.Basic {
+    font-family: 'Courier New', Courier, monospace, Courier, monospace, Helvetica, sans-serif;
+    background: rgb(148, 187, 233);
+    background: linear-gradient(180deg, rgba(148, 187, 233, 1) 27%, rgba(238, 174, 202, 1) 66%);
+    max-width: 100%;
+    display: block;
+    min-height: 900px;
+    margin: 0;
+    padding: 0;
+}
+
+.headerBasic {
+    margin: 0 auto;
+}
+
+.dataInput {
+    font-size: 22px;
+    color: yellow;
+    margin: 30px 0 30px 0;
+}
+
+.Field {
+    max-width: 200px;
+    min-height: 25px;
+    border: 2px solid #000;
+    border-radius: 30px;
+}
+
+.message {
+    color: blue;
+    font-size: 21px;
+    margin: 40px 0 0 0;
+}
