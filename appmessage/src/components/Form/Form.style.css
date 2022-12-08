@@ -1,0 +1,22 @@
+.Forms {
+    display: flex;
+    /* justify-content: center; */
+    /* justify-self: center; */
+    /* margin: 0 auto; */
+    min-height: 4vh;
+    font-size: 20px;
+    position: fixed;
+    bottom: 0%;
+    right: 15%;
+}
+
+.Windows {
+    width: 60vw;
+    border-radius: 8px;
+}
+
+.btnSub {
+    width: 20vh;
+    background-color: aquamarine;
+    border-radius: 30px;
+}
