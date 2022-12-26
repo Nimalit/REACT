@@ -1,0 +1,11 @@
+.chat-list {
+    max-width: 12vw;
+    min-height: 10vh;
+    font-size: 30px;
+    background-color: greenyellow;
+    border-radius: 30px;
+    position: relative;
+    padding: 0;
+
+
+}
