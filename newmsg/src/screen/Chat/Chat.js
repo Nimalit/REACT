@@ -8,42 +8,18 @@ import { USER } from "../../extra/consts";
 import { useParams } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
-const chats = [
-    {
-        name: "YAR",
-        id: "YAR"
-    },
-    {
-        name: "BRO",
-        id: "BRO",
-    },
-    {
-        name: "Special",
-        id: "special"
-    },
-];
 
-const initMessages = {
-    YAR: [],
-    BRO: [],
-    special: [],
-};
-// const messages = { chatId: [], chatId: [], chatId: [] }
-
-export function Chat() {
+export function Chat({ messages, addMessage }) {
     const { id } = useParams();
-    const [messages, setMessages] = useState(initMessages);
-
-    const addMessage = (newMsg) => {
-        setMessages({ ...messages, [id]: [...messages[id], newMsg] });
-    }
 
     const sendMessage = (text) => {
         addMessage({
             author: USER.users,
             text,
             id: `msg-${Date.now()}`,
-        });
+        },
+            id
+        );
     };
 
     useEffect(() => {
@@ -55,16 +31,19 @@ export function Chat() {
                     author: USER.bot,
                     text: 'Привет мой друг',
                     id: `msg-${Date.now()}`,
-                });
+                },
+                    id
+                );
             }, 1000);
         }
+
         return () => {
             clearTimeout(timeout);
-        }
+        };
     }, [messages]);
 
     if (!messages[id]) {
-        return <Navigate to="/сhat" replace />
+        return <Navigate to="/сhat" replace />;
     }
 
     return (

@@ -20,9 +20,12 @@
 }
 
 .heanderElem {
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 68px 0px 2px 0px;
+  max-width: 70vw;
+  height: 60vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
