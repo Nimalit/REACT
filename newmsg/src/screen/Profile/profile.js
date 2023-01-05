@@ -1,26 +1,33 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCheckbox } from "../../store/profile/actions.js";
+import { setName, SET_NAME, toggleCheckbox } from "../../store/profile/actions.js";
 import * as React from 'react';
 import { Checkbox } from '@mui/material/Checkbox';
+import { Form } from "../../components/Form/Form";
+import { selectName, selectShowName } from "../../store/profile/selectors.js";
 
 
 
 export const Profile = () => {
     const dispatch = useDispatch();
-    const state = useSelector((state) => state);
-    console.log(state);
+    const name = useSelector(selectName);
+    const showName = useSelector(selectShowName);
+    // console.log(state);
     const handleClick = () => {
         dispatch(toggleCheckbox);
     };
 
-    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+    const handleSubmit = (text) => {
+        dispatch(setName(text));
+    };
+
 
     return (
         <>
             <h3>Твой профиль</h3>
-            {state.showName &&
-                <span>{state.name}</span>}
+            {showName &&
+                <span>{name}</span>}
             <button onClick={handleClick}>Изменить имя</button>
+            <Form onSubmit={handleSubmit} />
         </>
     );
 };
