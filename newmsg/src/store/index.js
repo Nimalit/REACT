@@ -5,16 +5,19 @@ import { messagesReducer } from "./messages/reducer";
 import { profileReducer } from "./profile/reducer";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { articlesReducer } from "./articles/reducer";
 
 const persistConfig = {
     key: "gbMessender",
     storage,
+    whileList: ["messages", "chats"],
 }
 
 const rootReducer = combineReducers({
     profile: profileReducer,
     chats: chatsReducer,
     messages: messagesReducer,
+    articles: articlesReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
