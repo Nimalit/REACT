@@ -26,7 +26,7 @@ export const getArticles = () => async (dispatch) => {
         if (!response.ok) {
             throw new Error(`Internet FAIL ${response.status}`);
         }
-        console.log("response", response);
+        // console.log("response", response);
 
         const result = await response.json();
         dispatch(getArticlesSuccess(result));

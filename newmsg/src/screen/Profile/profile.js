@@ -7,6 +7,7 @@ import { selectName, selectShowName } from "../../store/profile/selectors.js";
 import { auth, logOut, userNameRef, userRef, userShowNameRef } from "../../services/firebase.js";
 import { usePrev } from "../../extra/usePrev.js";
 import { snapshot, onValue, set } from "firebase/database";
+import './profile.style.css';
 
 
 export const Profile = ({ onLogout }) => {
@@ -36,12 +37,14 @@ export const Profile = ({ onLogout }) => {
     }, []);
 
     return (
-        <>
-            <h3>Твой профиль</h3>
-            <button onClick={logOut}>LOGOUT</button>
-            {showName && <span>{name}</span>}
-            <button onClick={handleClick}>Изменить имя</button>
+        <div className="profilePage">
+            <h3 className="headerPage">Твой профиль</h3>
+            {/* <div className="сontrolPanelProfile"> */}
+            <button className="Logout" onClick={logOut}>Выход</button>
+            {showName && <span className="outputName">{name}</span>}
+            <button className="changeName" onClick={handleClick}>Изменить имя</button>
+            {/* </div> */}
             <Form onSubmit={handleSubmit} />
-        </>
+        </div>
     );
 };

@@ -29,7 +29,7 @@ export const Form = ({ onSubmit }) => {
                 inputRef={inputRef}></TextField>
             <Button className="btnSub" type="submit"
                 variant="contained" color="success">
-                Отправить</Button>
+                Отправлять</Button>
         </form >
     )
 }
